@@ -24,7 +24,6 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqliteDatabase, int i, int i1) {
-        // Kosongkan, karena kita tidak mengimplementasikan upgrade database
     }
 
     public void insertData(SQLiteDatabase db, Mahasiswa mhs) {
@@ -44,7 +43,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 arrListMhs.add(new Mahasiswa(cursor.getString(0), cursor.getString(1), cursor.getInt(2)));
             } while (cursor.moveToNext());
         }
-        cursor.close(); // Tutup cursor setelah selesai menggunakan
+        cursor.close();
         return arrListMhs;
     }
 
